@@ -7,9 +7,9 @@ import javax.swing.ImageIcon;
 
 
 
-public class LayGame extends Lay {
+public class LayerGame extends Layer {
 	private static Image IMG_GAME = new  ImageIcon("graphics/string/db.png").getImage();
-	protected LayGame(int x, int y, int w, int h) {
+	protected LayerGame(int x, int y, int w, int h) {
 		super(x, y, w, h);
 		// TODO Auto-generated constructor stub
 	}

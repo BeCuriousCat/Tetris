@@ -5,10 +5,10 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class LayBackground extends Lay {
+public class LayerBackground extends Layer {
 	//TODO ¡Ÿ ±±≥æ∞
 	private static Image img_tmp_bg = new ImageIcon("graphics/background/aaa.jpg").getImage();
-	protected LayBackground(int x, int y, int w, int h) {
+	protected LayerBackground(int x, int y, int w, int h) {
 		super(x, y, w, h);
 	}
 

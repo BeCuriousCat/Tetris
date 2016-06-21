@@ -5,8 +5,8 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class FrameGame extends JFrame{
-	public  FrameGame(){
+public class JFrameGame extends JFrame{
+	public  JFrameGame(){
 		String title = "Java 俄罗斯方块";
 		int width = 1200;
 		int height = 700;
@@ -31,6 +31,6 @@ public class FrameGame extends JFrame{
 		this.setLocation(OffSetX, OffSetY);
 		
 		//设计默认Panel
-		this.setContentPane(new PanelGame());
+		this.setContentPane(new JPanelGame());
 	}
 }
