@@ -7,8 +7,8 @@ import javax.swing.ImageIcon;
 
 public class LayerBackground extends Layer {
 	//TODO ¡Ÿ ±±≥æ∞
-	private static Image img_tmp_bg = new ImageIcon("graphics/background/aaa.jpg").getImage();
-	protected LayerBackground(int x, int y, int w, int h) {
+	private static Image img_tmp_bg = new ImageIcon("graphics/background/Fish.jpg").getImage();
+	public LayerBackground(int x, int y, int w, int h) {
 		super(x, y, w, h);
 	}
 

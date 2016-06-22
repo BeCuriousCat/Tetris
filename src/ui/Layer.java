@@ -37,7 +37,7 @@ public abstract class Layer {
 	// 窗口所在的宽度
 	protected int w;
 
-	protected Layer(int x, int y, int w, int h) {
+	public Layer(int x, int y, int w, int h) {
 		this.x = x;
 		this.y = y;
 		this.w = w;

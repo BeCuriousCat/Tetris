@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 public class LayerDataBase extends Layer{
 
 	private static Image IMG_DB = new  ImageIcon("graphics/string/db.png").getImage();
-	protected LayerDataBase(int x, int y, int w, int h) {
+	public LayerDataBase(int x, int y, int w, int h) {
 		super(x, y, w, h);
 	}
 	

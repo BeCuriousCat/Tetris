@@ -3,7 +3,7 @@ package ui;
 import java.awt.Graphics;
 
 public class LayerButton extends Layer{
-	protected LayerButton(int x, int y, int w, int h) {
+	public LayerButton(int x, int y, int w, int h) {
 		super(x, y, w, h);
 		// TODO Auto-generated constructor stub
 	}
