@@ -22,15 +22,31 @@ public class GameConfig {
 	 */
 	private int windowSize;
 	/**
+	 * 窗口拔高 
+	 */
+	private int windowUp;
+	/**
 	 * 窗口外边距
 	 */
 	private int padding;
 	/**
 	 * 图层
 	 */
+	private String title;
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	private List<LayerConfig> layersConfig;
-
+	
+	public int getWindowUp() {
+		return windowUp;
+	}
 	public int getWidth() {
 		return width;
 	}
@@ -74,6 +90,17 @@ public class GameConfig {
 	 * @return
 	 */
 	private void setUiConfig(Element frame) {
+		//获取窗口宽度
+		this.width = Integer.parseInt(frame.attributeValue("width"));
+		//获取窗口高度
+		this.hight = Integer.parseInt(frame.attributeValue("height"));
+		//获取边框粗细
+		this.windowSize = Integer.parseInt(frame.attributeValue("windowSize"));
+		//获取标题
+		this.padding = Integer.parseInt(frame.attributeValue("padding"));
+		//获取窗口拔高
+		this.windowUp = Integer.parseInt(frame.attributeValue("windowUp"));
+		//获取窗口属性
 		List<Element> layers = frame.elements("layer");
 		layersConfig = new ArrayList<LayerConfig>();
 		for (Element layer : layers) {

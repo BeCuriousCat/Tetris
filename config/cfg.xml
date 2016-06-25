@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-	<frame width="1200" height="700" padding="16" windowSize="7">
+	<frame title="Java俄罗斯方块" width="1200" height="700" padding="16" windowSize="7" windowUp="32">
 		<layer class="ui.LayerBackground" x="0" y="0" w="0" h="0"/>
 		<layer class="ui.LayerDataBase" x="40" y="32" w="334" h="279"/>
 		<layer class="ui.LayerDisk" x="40" y="343" w="334" h="279"/>

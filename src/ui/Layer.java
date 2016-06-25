@@ -5,6 +5,10 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+import config.ConfigFactory;
+import config.GameConfig;
+import dto.GameDto;
+
 /**
  * 创建窗口
  * 
@@ -14,9 +18,16 @@ import javax.swing.ImageIcon;
 public abstract class Layer {
 	
 	// 内边距
-	protected static final int PADDING = 16;
+	protected static final int PADDING;
 	// 边框宽度
-	protected static final int BORDER = 7;
+	protected static final int BORDER;
+	
+	static{
+		//获取配置
+		GameConfig gameConfig = ConfigFactory.getGamefig();
+		PADDING = gameConfig.getPadding();
+		BORDER = gameConfig.getWindowSize();
+	}
 	
 	private static Image WINDOW_IMG = new ImageIcon("graphics/window/Window.png").getImage();
 	private static int IMG_W = WINDOW_IMG.getWidth(null);
@@ -36,6 +47,12 @@ public abstract class Layer {
 	protected int h;
 	// 窗口所在的宽度
 	protected int w;
+	//游戏数据
+	protected GameDto dto=null;
+	
+	public void setDto(GameDto dto) {
+		this.dto = dto;
+	}
 
 	public Layer(int x, int y, int w, int h) {
 		this.x = x;
