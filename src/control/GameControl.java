@@ -22,7 +22,34 @@ public class GameControl {
 		this.gameService = gameService;
 	}
 	public void test() {
-		this.gameService.gameTest();
+		this.panelGame.repaint();
+	}
+	/**
+	 * 控制器方向建（上）
+	 */
+	public void keyUp() {
+		this.gameService.keyUp();
+		this.panelGame.repaint();
+	}
+	/**
+	 * 控制器方向建（下）
+	 */
+	public void keyDown() {
+		this.gameService.keyDown();
+		this.panelGame.repaint();
+	}
+	/**
+	 * 控制器方向建（左）
+	 */
+	public void keyLeft() {
+		this.gameService.keyLeft();
+		this.panelGame.repaint();
+	}
+	/**
+	 * 控制器方向建（右）
+	 */
+	public void keyRight() {
+		this.gameService.keyRight();
 		this.panelGame.repaint();
 	}
 }
