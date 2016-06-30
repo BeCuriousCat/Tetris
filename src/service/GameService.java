@@ -18,33 +18,33 @@ public class GameService {
 	 */
 	public void keyUp() {
 		//TODO 旋转
-		if(canMove(0, -1)){
-			this.dto.getGameAct().move(0, -1);
-		}
+		this.dto.getGameAct().round();
 	}
 	/**
 	 * 控制器方向建（下）
 	 */
 	public void keyDown() {
-		if(canMove(0, 1)){
-			this.dto.getGameAct().move(0, 1);
+		boolean[][] map = null;
+		if(!this.dto.getGameAct().move(0, 1)){
+			//获取游戏地图对象
+			map = this.dto.getGameMap();
+			Point[] act = this.dto.getGameAct().getActPoints();
+			for (int i = 0; i < act.length; i++) {
+				map[act[i].x][act[i].y] = true;
+			}
 		}
 	}
 	/**
 	 * 控制器方向建（左）
 	 */
 	public void keyLeft() {
-		if(canMove(-1, 0)){
 			this.dto.getGameAct().move(-1, 0);
-		}
 	}
 	/**
 	 * 控制器方向建（右）
 	 */
 	public void keyRight() {
-		if(canMove(1, 0)){
 			this.dto.getGameAct().move(1, 0);
-		}
 	}
 	/**
 	 * 边界判定

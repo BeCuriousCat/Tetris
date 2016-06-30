@@ -16,19 +16,13 @@ public class GameDto {
 	/**
 	 * 窗口数据
 	 */
-	private boolean gameMap;
+	private boolean[][] gameMap;
 	/**
 	 * 下落的方块
 	 */
 	private GameAct gameAct;
 	
-	public int getNowlevel() {
-		return nowlevel;
-	}
 
-	public void setNowlevel(int nowlevel) {
-		this.nowlevel = nowlevel;
-	}
 	/**
 	 * 下一个方块，用数字枚举
 	 */
@@ -45,7 +39,20 @@ public class GameDto {
 	 * 移除的行数
 	 */
 	private int removeLine;
-
+	
+	public GameDto(){
+		dtoInit();
+	}
+	
+	/**
+	 * dto初始化
+	 */
+	public void dtoInit(){
+		//TODO 硬编码
+		this.gameMap = new boolean[10][18];
+		//TODO 初始化所有游戏对象
+	}
+	
 	public List<Player> getDb() {
 		return db;
 	}
@@ -61,12 +68,18 @@ public class GameDto {
 	public void setLocal(List<Player> local) {
 		this.local = local;
 	}
+	public int getNowlevel() {
+		return nowlevel;
+	}
 
-	public boolean isGameMap() {
+	public void setNowlevel(int nowlevel) {
+		this.nowlevel = nowlevel;
+	}
+	public boolean[][] getGameMap() {
 		return gameMap;
 	}
 
-	public void setGameMap(boolean gameMap) {
+	public void setGameMap(boolean[][] gameMap) {
 		this.gameMap = gameMap;
 	}
 
@@ -101,6 +114,6 @@ public class GameDto {
 	public void setRemoveLine(int removeLine) {
 		this.removeLine = removeLine;
 	}
-	
+
 	
 }
