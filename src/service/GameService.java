@@ -1,13 +1,13 @@
 package service;
 
 import java.awt.Point;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 import dto.GameDto;
 import entity.GameAct;
 
 public class GameService {
+	private static final int MAX_TYPE = 7;
 	private  GameDto dto;
 	public GameService(GameDto dto){
 		this.dto = dto;
@@ -43,8 +43,9 @@ public class GameService {
 		//TODO 算分
 		//TODO 判断是否升级
 		//TODO 升级
+		this.dto.getGameAct().init(this.dto.getNext());
 		//TODO 刷新一个新的方块
-		this.dto.getGameAct().init((int) Math.ceil((Math.random()*6)));
+		this.dto.setNext(new Random().nextInt(MAX_TYPE));
 	}
 	/**
 	 * 控制器方向建（左）

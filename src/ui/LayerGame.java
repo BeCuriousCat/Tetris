@@ -10,11 +10,11 @@ import org.omg.CORBA.TypeCode;
 
 public class LayerGame extends Layer {
 
-	private static Image ACT = new ImageIcon("graphics/game/rect.png").getImage();
+	private static final Image ACT = new ImageIcon("graphics/game/rect1.png").getImage();
 	/**
 	 * 数字和2有关的，用偏移量，提高效率
 	 */
-	private static int SIZE_ROL = 5;
+	private static final int  SIZE_ROL = 5;
 
 	public LayerGame(int x, int y, int w, int h) {
 		super(x, y, w, h);
