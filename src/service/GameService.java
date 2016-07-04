@@ -60,4 +60,9 @@ public class GameService {
 			this.dto.getGameAct().move(1, 0,this.dto.getGameMap());
 	}
 	
+	//TODO 测试方法等级提升
+	
+	public void  testLevelUp() {
+		this.dto.setNowlevel(this.dto.getNowlevel()+1);
+	}
 }

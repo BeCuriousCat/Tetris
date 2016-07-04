@@ -30,6 +30,9 @@ public class GameControl {
 	public void keyUp() {
 		this.gameService.keyUp();
 		this.panelGame.repaint();
+		
+		this.gameService.testLevelUp();
+		this.panelGame.repaint();
 	}
 	/**
 	 * 控制器方向建（下）
