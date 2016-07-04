@@ -1,5 +1,5 @@
 package config;
-
+//桂壮加了一行注释
 public class ConfigFactory {
 	private static GameConfig Game_CONFIG = null;
 	static{
