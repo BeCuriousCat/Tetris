@@ -10,7 +10,7 @@ import org.omg.CORBA.TypeCode;
 
 public class LayerGame extends Layer {
 
-	private static final Image ACT = new ImageIcon("graphics/game/rect1.png").getImage();
+
 	/**
 	 * 数字和2有关的，用偏移量，提高效率
 	 */
@@ -48,7 +48,7 @@ public class LayerGame extends Layer {
 	 * 绘制正方形块
 	 */
 	private void drawActByPoint(int x,int y,int imgId, Graphics g){
-		g.drawImage(ACT, 
+		g.drawImage(Img.ACT, 
 				this.x + (x <<SIZE_ROL) + BORDER, 
 				this.y + (y <<SIZE_ROL) + BORDER, 
 				this.x + (x +1<<SIZE_ROL) + BORDER, 
