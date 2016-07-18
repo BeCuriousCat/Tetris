@@ -160,7 +160,7 @@ public abstract class Layer {
 		}
 	}
 	
-	protected void drawRect(String title,int rectY,double value, double maxValue, Graphics g) {
+	protected void drawRect(String title,int rectY,double precent, Graphics g) {
 		//各种值初始化
 		int rect_x = this.x + PADDING;
 		int rect_y = this.y + rectY;
@@ -174,12 +174,11 @@ public abstract class Layer {
 		g.fillRect(rect_x + 4, this.y + rectY + 4, this.rectW - 8,
 				IMG_RECT_H - 8);
 		//绘制槽值
-		//求比值
-		double  p = value/maxValue;
+		
 		//求宽度
-		int w = (int)(p*this.rectW-4);
+		int w = (int)(precent*this.rectW-4);
 		//求颜色
-		int subIdx = (int)(p*IMG_RECT_W);
+		int subIdx = (int)(precent*IMG_RECT_W)-1;
 		g.drawImage(Img.RECT, 
 				rect_x + 4, rect_y+4,
 				rect_x +4 +w, rect_y + 4 + IMG_RECT_H,

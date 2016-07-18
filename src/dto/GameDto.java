@@ -115,5 +115,4 @@ public class GameDto {
 		this.removeLine = removeLine;
 	}
 
-	
 }

@@ -68,7 +68,8 @@ public class LayerPoint extends Layer {
 
 		// 绘制槽值（经验值）
 		int rmLine = this.dto.getRemoveLine();
-		drawRect("下一级",this.expY,(double) (rmLine % LEVERL_UP), (double) LEVERL_UP, g);
+		double precent = (double) (rmLine % LEVERL_UP)/(double) LEVERL_UP;
+		drawRect("下一级",this.expY,precent, g);
 	}
 
 

@@ -1,5 +1,6 @@
 package control;
 
+import dao.DataTest;
 import service.GameService;
 import ui.JPanelGame;
 /**
@@ -17,9 +18,19 @@ public class GameControl {
 	 * 游戏逻辑层
 	 */
 	private GameService gameService;
+	private DataTest dataA;
+	private DataTest dataB;
 	public GameControl(JPanelGame panelGame, GameService gameService){
 		this.panelGame = panelGame;
 		this.gameService = gameService;
+		//从数据接口A 获得数据库记录
+		this.dataA = new DataTest();
+		//设置数据库记录到游戏
+		this.gameService.setRecodeDataBase(dataA.loadData());
+		//从数据接口B获取数据库记录
+		this.dataB = new DataTest();
+		//设置本地记录到游戏
+		this.gameService.setDiskRecode(dataB.loadData());
 	}
 	public void test() {
 		this.panelGame.repaint();
