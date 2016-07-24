@@ -160,7 +160,15 @@ public abstract class Layer {
 		}
 	}
 	
-	protected void drawRect(String title,int rectY,double precent, Graphics g) {
+	/**
+	 * 画进度条
+	 * @param title
+	 * @param precent
+	 * @param precent 
+	 * @param percent 
+	 * @param g
+	 */
+	protected void drawRect(String title,int rectY, double precent, Graphics g) {
 		//各种值初始化
 		int rect_x = this.x + PADDING;
 		int rect_y = this.y + rectY;
@@ -181,12 +189,13 @@ public abstract class Layer {
 		int subIdx = (int)(precent*IMG_RECT_W)-1;
 		g.drawImage(Img.RECT, 
 				rect_x + 4, rect_y+4,
-				rect_x +4 +w, rect_y + 4 + IMG_RECT_H,
+				rect_x  +w, rect_y + 4 + IMG_RECT_H,
 				subIdx, 0, subIdx+1, IMG_RECT_H,
 				null);
 		//显示下一级字体
 		g.setColor(Color.WHITE);
 		g.setFont(DEF_FONT);
-		g.drawString(title, rect_x, rect_y+23);
+		g.drawString(title, rect_x+PADDING, rect_y+23);
+		
 	}
 }

@@ -5,7 +5,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class LayerDisk extends Layer{
+public class LayerDisk extends LayerDate{
 	
 	
 	public LayerDisk(int x, int y, int w, int h) {
@@ -14,6 +14,7 @@ public class LayerDisk extends Layer{
 	}
 	public void paint(Graphics g){
 		this.createWindow(g);
-		g.drawImage(Img.DISK, this.x+PADDING, this.y+PADDING, null);
+		this.showDate(Img.DISK, this.dto.getDb(), g);
+		
 	}
 }

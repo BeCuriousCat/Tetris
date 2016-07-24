@@ -1,6 +1,8 @@
 package dto;
 
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Comparable<Player> ,Serializable {
 	private String name;
 	private int point;
 	
@@ -24,6 +26,11 @@ public class Player {
 
 	public void setPoint(int point) {
 		this.point = point;
+	}
+
+	@Override
+	public int compareTo(Player o) {
+		return o.point - this.point;
 	}
 	
 	

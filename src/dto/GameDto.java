@@ -1,5 +1,8 @@
 package dto;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import entity.GameAct;
@@ -58,15 +61,28 @@ public class GameDto {
 	}
 
 	public void setDb(List<Player> db) {
-		this.db = db;
+		this.db = setFillRecode(db);
 	}
 
+	private  List<Player> setFillRecode(List<Player> players){
+		//如果进入为空，则新建
+		if( players == null ){
+			players = new ArrayList<Player>();
+		}
+		//如果小于5条，就添加到5条
+		while (players.size() < 5) {
+			players.add(new Player("NO DATE",0));
+		}
+		Collections.sort(players);
+		return players;
+	}
+	
 	public List<Player> getLocal() {
 		return local;
 	}
 
 	public void setLocal(List<Player> local) {
-		this.local = local;
+		this.local = setFillRecode(local);
 	}
 	public int getNowlevel() {
 		return nowlevel;
