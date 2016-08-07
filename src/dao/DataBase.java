@@ -1,22 +1,37 @@
 package dao;
 
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
+
+
+
+
 
 import dto.Player;
 
 public class DataBase implements Data{
 
+	private static String Driver = "com.mysql.jdbc.Driver";
+	private static String USER = "tetris";
+	private static String PASSWORD = "tetris";
+	private static String URL = "jdbc:mysql://115.28.172.55:3306/tetris";
+
+	static{
+		try {
+			Class.forName(Driver);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public List<Player> loadData() {
-		//TODO
-		List<Player> players = new ArrayList<Player>();
-		players.add(new Player("小明",100));
-		players.add(new Player("小明",100));
-		players.add(new Player("小明",100));
-		players.add(new Player("小明",100));
-		players.add(new Player("小明",100));
-		return players;
+		
+	
+		return null;
 	}
 
 	@Override
@@ -24,5 +39,12 @@ public class DataBase implements Data{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public static void main(String[] args) throws SQLException {
+		 Connection conn = DriverManager.getConnection(URL,USER,PASSWORD);
+		 if(conn != null ){
+			 System.out.println("连接成功");
+		 }
+		 conn.close();
+	}
 }
