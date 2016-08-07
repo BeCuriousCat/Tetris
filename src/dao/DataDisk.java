@@ -36,8 +36,8 @@ public class DataDisk implements Data {
 	}
 
 	@Override
-	public void saveData(List<Player> players) {
-		ObjectOutputStream oos = null;
+	public void saveData(Player player) {
+	/*	ObjectOutputStream oos = null;
 		
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH));
@@ -51,7 +51,7 @@ public class DataDisk implements Data {
 				e.printStackTrace();
 			}
 		}
-		
+	*/	
 	}
 	
 }

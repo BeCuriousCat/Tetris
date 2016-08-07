@@ -19,7 +19,7 @@ public class DataTest implements Data{
 	}
 
 	@Override
-	public void saveData(List<Player> players) {
+	public void saveData(Player player) {
 		// TODO Auto-generated method stub
 		
 	}
