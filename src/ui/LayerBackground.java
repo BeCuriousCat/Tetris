@@ -14,7 +14,8 @@ public class LayerBackground extends Layer {
 
 	@Override
 	public void paint(Graphics g) {
-		g.drawImage(Img.tmp_bg, 0, 0,1200,700, null);
+		int index = this.dto.getNowlevel()%(Img.BG_LIST.size());
+		g.drawImage(Img.BG_LIST.get(index), 0, 0,1200,700, null);
 	}
 
 }
